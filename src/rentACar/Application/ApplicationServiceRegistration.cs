@@ -1,4 +1,5 @@
-﻿using Application.Services.AuthenticatorService;
+﻿using Application.Features.Brands.Rules;
+using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
 using Core.Application.Pipelines.Authorization;
@@ -44,6 +45,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthService, AuthManager>();
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
+        services.AddScoped<BrandBusinessRules>();
 
         return services;
     }
